@@ -1,0 +1,35 @@
+
+int LED0=43;
+int LED1=44;
+int LED2=45;
+int LED3=46;
+
+
+
+void setup() {
+pinMode(LED0, OUTPUT);
+pinMode(LED1, OUTPUT);
+pinMode(LED2, OUTPUT);
+pinMode(LED3, OUTPUT);
+
+}
+
+void loop() {
+
+digitalWrite(LED0, HIGH);
+delay(1000);
+digitalWrite(LED0, LOW);
+
+digitalWrite(LED1, HIGH);
+delay(1000);
+digitalWrite(LED1, LOW);
+
+digitalWrite(LED2, HIGH);
+delay(1000);
+digitalWrite(LED2, LOW);
+
+digitalWrite(LED3, HIGH);
+delay(1000);
+digitalWrite(LED3, LOW);
+
+}
