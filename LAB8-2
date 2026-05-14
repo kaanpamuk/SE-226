@@ -1,0 +1,75 @@
+int LED0=43;
+int LED1=44;
+int LED2=45;
+int LED3=46;
+
+
+int SW0=38;
+int SW1=39;
+int SW2=40;
+int SW3=41;
+
+bool led0State= LOW;
+bool led1State= LOW;
+bool led2State= LOW;
+bool led3State= LOW;
+
+bool lastSW0=LOW;
+bool lastSW1=LOW;
+bool lastSW2=LOW;
+bool lastSW3=LOW;
+
+
+
+
+void setup() {
+pinMode(LED0, OUTPUT);
+pinMode(LED1, OUTPUT);
+pinMode(LED2, OUTPUT);
+pinMode(LED3, OUTPUT);
+
+pinMode(SW0, INPUT);
+pinMode(SW1, INPUT);
+pinMode(SW2, INPUT);
+pinMode(SW3, INPUT);
+
+
+}
+
+void loop() {
+
+bool currentSW0 =digitalRead(SW0);
+bool currentSW1 =digitalRead(SW1);
+bool currentSW2 =digitalRead(SW2);
+bool currentSW3 =digitalRead(SW3);
+
+
+if (currentSW0 == HIGH && lastSW0 == LOW){
+  led0State = !led0State;
+  digitalWrite(LED0, led0State);
+}
+
+if (currentSW1 == HIGH && lastSW1 == LOW){
+  led1State = !led1State;
+  digitalWrite(LED1, led1State);
+}
+
+if (currentSW2 == HIGH && lastSW2 == LOW){
+  led2State = !led2State;
+  digitalWrite(LED2, led2State);
+}
+
+if (currentSW3 == HIGH && lastSW3 == LOW){
+  led3State = !led3State;
+  digitalWrite(LED3, led3State);
+}
+
+lastSW0 = currentSW0;
+lastSW1 = currentSW1;
+lastSW2 = currentSW2;
+lastSW3 = currentSW3;
+
+delay(50);
+
+
+}
